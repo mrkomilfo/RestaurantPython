@@ -11,15 +11,15 @@ class EnterWindow(QtWidgets.QMainWindow):
         self.authorization_window = None
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.employeeButton.clicked.connect(self.openAuthorizationPage)
-        self.ui.guestButton.clicked.connect(self.openCustomerPage)
+        self.ui.employeeButton.clicked.connect(self.open_authorization_page)
+        self.ui.guestButton.clicked.connect(self.open_customer_page)
 
-    def openCustomerPage(self):
+    def open_customer_page(self):
         self.customer_window = CustomerWindow.CustomerWindow()
         self.customer_window.show()
         self.close()
 
-    def openAuthorizationPage(self):
+    def open_authorization_page(self):
         self.authorization_window = AuthorizationWindow.AuthorizationWindow()
         self.authorization_window.show()
         self.close()

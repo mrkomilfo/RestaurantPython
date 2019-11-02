@@ -1,15 +1,7 @@
 import sys
 from PyQt5 import QtWidgets
 import Control.enterWindow as EnterWindow
-from Models.Menu import Menu
-
-
-class DB:
-    menu = Menu.get_start_menu()
-
-    @staticmethod
-    def getMenu():
-        return DB.menu
+from MLM.PredictionMachine import PredictionMachine
 
 
 def main():

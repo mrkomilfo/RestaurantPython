@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets
 from View.authorization import Ui_MainWindow
 import Control.enterWindow as EnterWindow
 import Control.administrationWindow as AdministrationWindow
+from DB.dbHandler import dbHandler as DB
 
 
 class AuthorizationWindow(QtWidgets.QMainWindow):
@@ -20,6 +21,7 @@ class AuthorizationWindow(QtWidgets.QMainWindow):
         self.close()
 
     def openAdministrationPage(self):
-        self.administration_window = AdministrationWindow.AdministrationWindow()
-        self.administration_window.show()
-        self.close()
+        if DB.login(self.ui.loginEdit.text(), self.ui.passwordEdit.text()):
+            self.administration_window = AdministrationWindow.AdministrationWindow()
+            self.administration_window.show()
+            self.close()

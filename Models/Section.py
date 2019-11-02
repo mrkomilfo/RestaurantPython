@@ -1,20 +1,21 @@
 import Models.Dish as Dish
 
 
-class Section(Dish):
+class Section(Dish.Dish):
     def __init__(self, dish):
-        self.__name = dish.name
-        self.__out = dish.out
-        self.__price = dish.price
-        self.__number = 1
+        self.dish_type = dish.dish_type
+        self.name = dish.name
+        self.output = dish.output
+        self.energy = dish.energy
+        self.price = dish.price
+        self.number = 1
 
-    @property
-    def number(self):
-        return self.__number
+    def get_cost(self):
+        return self.number * self.price
 
     def increment(self):
-        self.__number += 1
+        self.number += 1
 
     def decrement(self):
-        self.__number -= 1
+        self.number -= 1
 
